@@ -1,0 +1,8 @@
+An identity based encryption JCA provider
+
+Licensed under the GPL V3
+
+Built with Maven 2.x
+
+	cd <root directory>
+	mvn clean install
