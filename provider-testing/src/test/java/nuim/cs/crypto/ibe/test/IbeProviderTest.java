@@ -1,4 +1,4 @@
-package nuim.cs.crypto.ibe;
+package nuim.cs.crypto.ibe.test;
 
 import java.math.BigInteger;
 import java.security.InvalidAlgorithmParameterException;
@@ -20,15 +20,19 @@ import javax.crypto.NoSuchPaddingException;
 import junit.framework.TestCase;
 import nuim.cs.crypto.bilinear.BilinearMap;
 import nuim.cs.crypto.bilinear.ModifiedTatePairing;
+import nuim.cs.crypto.ibe.IbeKeyParameters;
+import nuim.cs.crypto.ibe.IbeProvider;
+import nuim.cs.crypto.ibe.IbePublicKey;
+import nuim.cs.crypto.ibe.IbeSystemParameters;
 
 import org.junit.Test;
 
-import com.hellblazer.security.ReplaceCertFactoryProvider;
+import com.hellblazer.security.SelfSignedInsertion;
 
 public class IbeProviderTest extends TestCase {
     // @Test
     public void testCipher() throws Exception {
-        ReplaceCertFactoryProvider.install();
+        SelfSignedInsertion.allowSelfSigned();
         Provider provider = new IbeProvider();
 
         // get the ibe cipher
@@ -134,7 +138,7 @@ public class IbeProviderTest extends TestCase {
 
     // @Test
     public void testCreateCipher() throws Exception {
-        ReplaceCertFactoryProvider.install();
+        SelfSignedInsertion.allowSelfSigned();
         Provider provider = new IbeProvider();
 
         // get the ibe cipher
@@ -152,7 +156,7 @@ public class IbeProviderTest extends TestCase {
 
     @Test
     public void testCreateKeyPairGenerator() throws Exception {
-        ReplaceCertFactoryProvider.install();
+        SelfSignedInsertion.allowSelfSigned();
         Provider provider = new IbeProvider();
 
         // get the ibe key pair generator
